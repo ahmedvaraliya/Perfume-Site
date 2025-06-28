@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Unisex Perfume Collection</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+   header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1); /* Bottom white glow */
+}
+
+  header .logo img {
+   height: 60px;
+    width: 60px;
+  }
+
+  header nav {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+
+  header nav a {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    padding-bottom: 4px;
+  }
+
+  header nav a::before,
+  header nav a::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    background-color: #fff;
+    transition: 0.3s ease;
+  }
+
+  header nav a::before {
+    left: 0;
+  }
+
+  header nav a::after {
+    right: 0;
+  }
+
+  header nav a:hover::before,
+  header nav a:hover::after {
+    width: 50%;
+  }
+
+  /* Optional Dropdown Styling */
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000;
+    top: 100%;
+    left: 0;
+    min-width: 140px;
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
+    z-index: 99;
+    padding: 10px 0;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content a {
+    display: block;
+    padding: 8px 16px;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #333;
+  }
+    .logo img {
+      height: 40px;
+    }
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(to right, #000, #333);
+    }
+    .hero h1 {
+      font-size: 3rem;
+    }
+    .hero p {
+      color: #ccc;
+      margin-top: 10px;
+    }
+
+    section {
+      padding: 60px 20px;
+      border-bottom: 1px solid #333;
+    }
+    section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.2rem;
+    }
+
+    .perfume-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .perfume-card {
+      background: #111;
+      width: 220px;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .perfume-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+
+    .perfume-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .perfume-title {
+      font-size: 1.1rem;
+      margin-top: 10px;
+    }
+
+    .perfume-desc {
+      font-size: 0.85rem;
+      color: #bbb;
+      margin-top: 5px;
+    }
+
+    .price {
+      margin-top: 8px;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .add-btn {
+      background: #fff;
+      color: #000;
+      padding: 8px 12px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .add-btn:hover {
+      background: #ddd;
+    }
+
+    footer {
+      background: #333;
+      padding: 30px 20px;
+      text-align: center;
+      color: #fff;
+    }
+     .animated-btn {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 50px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.animated-btn::before,
+.animated-btn::after {
+  content: '';
+  position: absolute;
+  transition: all 0.4s ease;
+  z-index: -1;
+  border-radius: 50px;
+}
+
+.animated-btn::before {
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: white;
+}
+
+.animated-btn::after {
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 0%;
+  background: #444;
+}
+
+.animated-btn:hover::before {
+  width: 100%;
+}
+
+.animated-btn:hover::after {
+  height: 100%;
+}
+
+.animated-btn:hover {
+  color: black;
+}
+
+
+/* global-button */
+.animated-btn {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 50px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.animated-btn::before,
+.animated-btn::after {
+  content: '';
+  position: absolute;
+  transition: all 0.4s ease;
+  z-index: -1;
+  border-radius: 50px;
+}
+
+.animated-btn::before {
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: white;
+}
+
+.animated-btn::after {
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 0%;
+  background: #444;
+}
+
+.animated-btn:hover::before {
+  width: 100%;
+}
+
+.animated-btn:hover::after {
+  height: 100%;
+}
+
+.animated-btn:hover {
+  color: black;
+}
+.footer-links {
+    list-style: none;
+    padding: 0;
+    font-size: 14px;
+  }
+
+  .footer-link {
+    margin-bottom: 10px;
+  }
+
+  .footer-link a {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    padding-bottom: 4px;
+    display: inline-block;
+  }
+
+  .footer-link a::before,
+  .footer-link a::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    background-color: #fff;
+    transition: 0.3s ease;
+  }
+
+  .footer-link a::before {
+    left: 0;
+  }
+
+  .footer-link a::after {
+    right: 0;
+  }
+
+  .footer-link a:hover::before,
+  .footer-link a:hover::after {
+    width: 50%;
+  }
+
+
+    @media (max-width: 768px) {
+      .perfume-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .perfume-card {
+    width: 90%;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: #111; /* optional dark background */
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .perfume-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  .perfume-title {
+    font-size: 1.1rem;
+    margin: 10px 0 5px;
+    color: #fff;
+  }
+
+  .perfume-desc {
+    font-size: 0.95rem;
+    margin-bottom: 15px !important;
+    color: #ccc;
+  }
+
+ 
+
+  section h2 {
+    font-size: 1.3rem;
+    text-align: center;
+    margin: 25px 0 15px;
+    color: #fff;
+  }
+  .testimonial {
+        padding: 60px 10px !important;
+
+  }
+    #sliderTrack > div {
+    flex: 0 0 100% !important;
+    padding: 10px;
+  }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">
+    <a href="new.html">
+      <img src="ChatGPT Image Jun 27, 2025, 09_56_59 PM.png" alt="MINA Logo">
+    </a>
+  </div>
+  <nav>
+    <div class="dropdown">
+      <a>Shop ▾</a>
+      <div class="dropdown-content">
+        <a href="men.html">Men</a>
+        <a href="women.html">Women</a>
+        <a href="unisex.html">Unisex</a>
+        <a href="cart.html">All Perfumes</a>
+      </div>
+    </div>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>Unisex Perfume Collection</h1>
+  <p>Fragrances made for everyone — explore bold, balanced, and timeless scents</p>
+</div>
+
+<!-- Section 1 -->
+<section>
+  <h2>Best Sellers</h2>
+  <div class="perfume-row">
+    <div class="perfume-card">
+      <img src="black-bottle-mens-perfume-dark-background-space-text_185193-161768.avif" alt="CK One">
+      <div class="perfume-title">CK One by Calvin Klein</div>
+     <div class="perfume-desc" style="margin-bottom: 35px;">Citrus & Green Tea blend</div>
+
+      <button class="animated-btn">Add to Cart</button>
+    </div>
+
+    <div class="perfume-card">
+      <img src="images (3).jpeg" alt="Santal 33">
+      <div class="perfume-title">Santal 33 by Le Labo</div>
+      <div class="perfume-desc" style="margin-bottom: 35px;">Warm, woody, spicy musk</div>
+      <button class="animated-btn">Add to Cart</button>
+    </div>
+
+    <div class="perfume-card">
+      <img src="WhatsApp Image 2025-06-27 at 10.30.08_137ea4aa.jpg" alt="Tom Ford Oud Wood">
+      <div class="perfume-title">Tom Ford Oud Wood</div>
+      <div class="perfume-desc" style="margin-bottom: 35px;">Exotic rosewood & cardamom</div>
+      <button class="animated-btn">Add to Cart</button>
+    </div>
+  </div>
+</section>
+
+<!-- Section 2 -->
+<section>
+  <h2>Fresh & Citrusy</h2>
+  <div class="perfume-row">
+    <div class="perfume-card">
+      <img src="WhatsApp Image 2025-06-25 at 10.02.00_42cf1f93.jpg" alt="Jo Malone">
+      <div class="perfume-title">Jo Malone Lime Basil</div>
+      <div class="perfume-desc" style="margin-bottom: 35px;">Lime, basil & mandarin</div>
+      <button class="animated-btn">Add to Cart</button>
+    </div>
+
+    <div class="perfume-card">
+      <img src="WhatsApp Image 2025-06-27 at 10.30.08_40f47337.jpg" alt="Creed">
+      <div class="perfume-title">Creed Aventus</div>
+      <div class="perfume-desc" style="margin-bottom: 35px;">Pineapple, birch & ambergris</div>
+      <button class="animated-btn">Add to Cart</button>
+    </div>
+
+    <div class="perfume-card">
+      <img src="WhatsApp Image 2025-06-27 at 10.30.09_0642202e.jpg" alt="Replica">
+      <div class="perfume-title">Replica: By The Fireplace</div>
+      <div class="perfume-desc" style="margin-bottom: 35px;">Warm clove, chestnut & vanilla</div>
+      <button class="animated-btn">Add to Cart</button>
+    </div>
+  </div>
+</section>
+
+<!-- Section 3 -->
+<section>
+  <h2>Earthy & Woody</h2>
+  <div class="perfume-row">
+    <div class="perfume-card">
+      <img src="WhatsApp Image 2025-06-27 at 10.30.09_a9938007.jpg" alt="DS Durga">
+      <div class="perfume-title">DS & Durga - Cowboy Grass</div>
+      <div class="perfume-desc" style="margin-bottom: 35px;">Vetiver, thyme & sage</div>
+      <button class="animated-btn">Add to Cart</button>
+    </div>
+
+    <div class="perfume-card">
+      <img src="WhatsApp Image 2025-06-27 at 10.47.10_f9977a36.jpg" alt="Byredo">
+      <div class="perfume-title">Byredo - Bal d’Afrique</div>
+      <div class="perfume-desc" style="margin-bottom: 35px;">African marigold & vetiver</div>
+      <button class="animated-btn">Add to Cart</button>
+    </div>
+
+    <div class="perfume-card">
+      <img src="Nashwa_Graphic_v2.webp" alt="Nirvana">
+      <div class="perfume-title">Elizabeth & James - Nirvana</div>
+      <div class="perfume-desc" style="margin-bottom: 35px;">Sandalwood & violet</div>
+      <button class="animated-btn">Add to Cart</button>
+    </div>
+  </div>
+</section>
+<section class="testimonial" style="background-color: #000; padding: 60px 0; color: #fff; font-family: sans-serif;">
+  <h2 style="text-align: center; font-size: 2rem; margin-bottom: 40px;">Our Unisex Bestsellers</h2>
+  
+  <div style="max-width: 1000px; margin: auto; position: relative; overflow: hidden;">
+    <div id="sliderTrack" style="display: flex; transition: transform 0.5s ease;">
+      <div style="flex: 0 0 33.33%; padding: 10px;"><img src="download (1).jpeg" style="width: 100%; border-radius: 10px;"></div>
+      <div style="flex: 0 0 33.33%; padding: 10px;"><img src="download (2).jpeg" style="width: 100%; border-radius: 10px;"></div>
+      <div style="flex: 0 0 33.33%; padding: 10px;"><img src="images (1).jpeg" style="width: 100%; border-radius: 10px;"></div>
+      <div style="flex: 0 0 33.33%; padding: 10px;"><img src="All-time-Best-Selling-perfumes-in-UAE.webp" style="width: 100%; border-radius: 10px;"></div>
+      <div style="flex: 0 0 33.33%; padding: 10px;"><img src="Tom-Ford-Grey-Vetiver-Pour-Homme-Parfum-2.webp  " style="width: 100%; border-radius: 10px;"></div>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <button onclick="slidePrev()" style="position: absolute; top: 45%; left: 0; transform: translateY(-50%); background-color: #333; color: #fff; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer;">❮</button>
+    <button onclick="slideNext()" style="position: absolute; top: 45%; right: 0; transform: translateY(-50%); background-color: #333; color: #fff; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer;">❯</button>
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    const sliderTrack = document.getElementById('sliderTrack');
+    const totalSlides = 5;
+    const visibleSlides = 3;
+
+    function slideNext() {
+      if (currentIndex < totalSlides - visibleSlides) {
+        currentIndex++;
+        updateSlider();
+      }
+    }
+
+    function slidePrev() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateSlider();
+      }
+    }
+
+    function updateSlider() {
+      const slideWidth = sliderTrack.children[0].offsetWidth;
+      sliderTrack.style.transform = 'translateX(-' + (slideWidth * currentIndex) + 'px)';
+    }
+
+    window.addEventListener('resize', updateSlider);
+  </script>
+</section>
+
+
+<!-- Footer Start -->
+<footer style="background-color: #000; color: #fff; padding: 60px 20px; font-family: 'Inter', sans-serif;">
+  <div style="max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
+
+    <!-- About / Description -->
+    <div>
+      <h3 style="margin-bottom: 15px; border-bottom: 2px solid #333; display: inline-block;">Perfume Empire</h3>
+      <p style="font-size: 14px; line-height: 1.6;">
+        A luxurious destination for elegant, unforgettable fragrances that define your personality and style.
+      </p>
+      <div style="margin-top: 15px; display: flex; gap: 12px; ">
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" width="24" alt="Instagram"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" width="24" alt="Facebook"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" width="24" alt="Twitter"></a>
+      </div>
+    </div>
+
+    <!-- Operating Hours -->
+    <div>
+      <h3 style="margin-bottom: 15px; border-bottom: 2px solid #333; display: inline-block;">Operating Hours</h3>
+      <ul style="list-style: none; padding: 0; font-size: 14px;">
+        <li style="margin-bottom: 8px;">Mon–Fri: 9:00 AM – 8:00 PM</li>
+        <li style="margin-bottom: 8px;">Saturday: 10:00 AM – 6:00 PM</li>
+        <li>Sunday: Closed</li>
+      </ul>
+    </div>
+
+    <!-- Quick Links -->
+  <div>
+  <h3 style="margin-bottom: 15px; border-bottom: 2px solid #333; display: inline-block;">Quick Links</h3>
+<ul class="footer-links">
+  <li class="footer-link"><a href="index.html">Home</a></li>
+  <li class="footer-link"><a href="about.html">About</a></li>
+  <li class="footer-link"><a href="men.html">men</a></li>
+  <li class="footer-link"><a href="women.html">women</a></li>
+  <li class="footer-link"><a href="unisex.html">unisex</a></li>
+  <li class="footer-link"><a href="contact.html">Contact</a></li>
+</ul>
+
+</div>
+
+    <!-- Contact Info -->
+    <div>
+      <h3 style="margin-bottom: 15px; border-bottom: 2px solid #333; display: inline-block;">Have a Question?</h3>
+      <ul style="list-style: none; padding: 0; font-size: 14px;">
+        <li style="margin-bottom: 10px;">
+          📍 123 Fragrance Street,<br> Mumbai, India
+        </li>
+        <li style="margin-bottom: 10px;">
+          ☎️ +91 98765 43210
+        </li>
+        <li style="margin-bottom: 15px;">
+          ✉️ support@perfumeempire.com
+        </li>
+      </ul>
+  
+    </div>
+
+  </div>
+
+  <!-- Footer Bottom -->
+  <div style="text-align: center; font-size: 13px; color: #fff; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
+    © 2025 Perfume Empire. All rights reserved.
+  </div>
+</footer>
+<script>
+  
+</script>
+</body>
+</html>

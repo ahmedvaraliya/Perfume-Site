@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Women's Perfume Collection</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1); /* Bottom white glow */
+}
+
+  header .logo img {
+     height: 60px;
+    width: 60px;
+  }
+
+  header nav {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+
+  header nav a {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    padding-bottom: 4px;
+  }
+
+  header nav a::before,
+  header nav a::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    background-color: #fff;
+    transition: 0.3s ease;
+  }
+
+  header nav a::before {
+    left: 0;
+  }
+
+  header nav a::after {
+    right: 0;
+  }
+
+  header nav a:hover::before,
+  header nav a:hover::after {
+    width: 50%;
+  }
+
+  /* Optional Dropdown Styling */
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000;
+    top: 100%;
+    left: 0;
+    min-width: 140px;
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
+    z-index: 99;
+    padding: 10px 0;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content a {
+    display: block;
+    padding: 8px 16px;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #333;
+  }
+    .hero-women {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      background-image: url('pexels-fotios-photos-29761958.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-women::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.4));
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: left;
+      max-width: 700px;
+      padding: 30px;
+    }
+
+    .hero-content h1 {
+      font-size: 50px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .hero-content p {
+      font-size: 20px;
+      color: #ddd;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 32px;
+      }
+
+      .hero-content p {
+        font-size: 16px;
+      }
+    }
+
+    .women-perfume-section {
+      background-color: #000;
+      padding: 80px 30px;
+      text-align: center;
+    }
+
+    .women-perfume-section h2 {
+      font-size: 36px;
+      margin-bottom: 50px;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .women-perfume-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .women-perfume-card {
+      background-color: #333;
+      padding: 25px;
+      border-radius: 16px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .women-perfume-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+    }
+
+    .women-perfume-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+    .women-perfume-card h4 {
+      font-size: 20px;
+      margin: 10px 0 5px;
+      color: #fff;
+    }
+
+    .women-perfume-card p {
+      font-size: 16px;
+      color: #fff;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+   .animated-btn {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 50px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.animated-btn::before,
+.animated-btn::after {
+  content: '';
+  position: absolute;
+  transition: all 0.4s ease;
+  z-index: -1;
+  border-radius: 50px;
+}
+
+.animated-btn::before {
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: white;
+}
+
+.animated-btn::after {
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 0%;
+  background: #444;
+}
+
+.animated-btn:hover::before {
+  width: 100%;
+}
+
+.animated-btn:hover::after {
+  height: 100%;
+}
+
+.animated-btn:hover {
+  color: black;
+}
+
+
+/* global-button */
+.animated-btn {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 50px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.animated-btn::before,
+.animated-btn::after {
+  content: '';
+  position: absolute;
+  transition: all 0.4s ease;
+  z-index: -1;
+  border-radius: 50px;
+}
+
+.animated-btn::before {
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: white;
+}
+
+.animated-btn::after {
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 0%;
+  background: #444;
+}
+
+.animated-btn:hover::before {
+  width: 100%;
+}
+
+.animated-btn:hover::after {
+  height: 100%;
+}
+
+.animated-btn:hover {
+  color: black;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    font-size: 14px;
+  }
+
+  .footer-link {
+    margin-bottom: 10px;
+  }
+
+  .footer-link a {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    padding-bottom: 4px;
+    display: inline-block;
+  }
+
+  .footer-link a::before,
+  .footer-link a::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    background-color: #fff;
+    transition: 0.3s ease;
+  }
+
+  .footer-link a::before {
+    left: 0;
+  }
+
+  .footer-link a::after {
+    right: 0;
+  }
+
+  .footer-link a:hover::before,
+  .footer-link a:hover::after {
+    width: 50%;
+  }
+
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">
+    <a href="new.html">
+      <img src="ChatGPT Image Jun 27, 2025, 09_56_59 PM.png" alt="MINA Logo">
+    </a>
+  </div>
+  <nav>
+    <div class="dropdown">
+      <a>Shop ▾</a>
+      <div class="dropdown-content">
+        <a href="men.html">Men</a>
+        <a href="women.html">Women</a>
+        <a href="unisex.html">Unisex</a>
+        <a href="cart.html">All Perfumes</a>
+      </div>
+    </div>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+  <!-- HERO IMAGE SECTION FOR WOMEN -->
+  <section class="hero-women">
+    <div class="hero-content">
+      <h1>Elevate Your Elegance</h1>
+      <p>Indulge in our exclusive collection of women's perfumes crafted to inspire confidence, grace, and timeless beauty. Your scent, your statement.</p>
+    </div>
+  </section>
+
+  <!-- WOMEN PERFUME SECTION -->
+  <section class="women-perfume-section">
+    <h2>Women's Perfume Collection</h2>
+
+    <div class="women-perfume-grid">
+      <div class="women-perfume-card">
+        <img src="pexels-maria-205949437-11678206.jpg" alt="Floral Grace">
+        <h4>Floral Grace</h4>
+        <p>₹1499</p>
+        <button class="animated-btn">Add to Cart</button>
+      </div>
+
+      <div class="women-perfume-card">
+        <img src="Dark_fragrance_ssd_16.jpg" alt="Velvet Bloom">
+        <h4>Velvet Bloom</h4>
+        <p>₹1799</p>
+        <button class="animated-btn">Add to Cart</button>
+      </div>
+
+      <div class="women-perfume-card">
+        <img src="pexels-fidel-2814832.jpg" alt="Sapphire Mist">
+        <h4>Sapphire Mist</h4>
+        <p>₹1999</p>
+        <button class="animated-btn">Add to Cart</button>
+      </div>
+
+      <div class="women-perfume-card">
+        <img src="pexels-karolina-grabowska-8361545.jpg" alt="Rose Desire">
+        <h4>Rose Desire</h4>
+        <p>₹1699</p>
+        <button class="animated-btn">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+<!-- Footer Start -->
+<footer style="background-color: #000; color: #fff; padding: 60px 20px; font-family: 'Inter', sans-serif;">
+  <div style="max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
+
+    <!-- About / Description -->
+    <div>
+      <h3 style="margin-bottom: 15px; border-bottom: 2px solid #333; display: inline-block;">Perfume Empire</h3>
+      <p style="font-size: 14px; line-height: 1.6;">
+        A luxurious destination for elegant, unforgettable fragrances that define your personality and style.
+      </p>
+      <div style="margin-top: 15px; display: flex; gap: 12px;;">
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" width="24" alt="Instagram"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" width="24" alt="Facebook"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" width="24" alt="Twitter"></a>
+      </div>
+    </div>
+
+    <!-- Operating Hours -->
+    <div>
+      <h3 style="margin-bottom: 15px; border-bottom: 2px solid #333; display: inline-block;">Operating Hours</h3>
+      <ul style="list-style: none; padding: 0; font-size: 14px;">
+        <li style="margin-bottom: 8px;">Mon–Fri: 9:00 AM – 8:00 PM</li>
+        <li style="margin-bottom: 8px;">Saturday: 10:00 AM – 6:00 PM</li>
+        <li>Sunday: Closed</li>
+      </ul>
+    </div>
+
+    <!-- Quick Links -->
+  <div>
+  <h3 style="margin-bottom: 15px; border-bottom: 2px solid #333; display: inline-block;">Quick Links</h3>
+<ul class="footer-links">
+  <li class="footer-link"><a href="index.html">Home</a></li>
+  <li class="footer-link"><a href="about.html">About</a></li>
+  <li class="footer-link"><a href="men.html">men</a></li>
+  <li class="footer-link"><a href="women.html">women</a></li>
+  <li class="footer-link"><a href="unisex.html">unisex</a></li>
+  <li class="footer-link"><a href="contact.html">Contact</a></li>
+</ul>
+
+</div>
+
+    <!-- Contact Info -->
+    <div>
+      <h3 style="margin-bottom: 15px; border-bottom: 2px solid #333; display: inline-block;">Have a Question?</h3>
+      <ul style="list-style: none; padding: 0; font-size: 14px;">
+        <li style="margin-bottom: 10px;">
+          📍 123 Fragrance Street,<br> Mumbai, India
+        </li>
+        <li style="margin-bottom: 10px;">
+          ☎️ +91 98765 43210
+        </li>
+        <li style="margin-bottom: 15px;">
+          ✉️ support@perfumeempire.com
+        </li>
+      </ul>
+  
+    </div>
+
+  </div>
+
+  <!-- Footer Bottom -->
+  <div style="text-align: center; font-size: 13px; color: #fff; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
+    © 2025 Perfume Empire. All rights reserved.
+  </div>
+</footer>
+</body>
+</html>

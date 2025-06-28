@@ -1,0 +1,263 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CONTACT-US</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="contact.css">
+<head>
+</head>
+<body>
+  <style>
+    header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1); /* Bottom white glow */
+}
+
+  header .logo img {
+    height: 60px;
+    width: 60px;
+  }
+
+  header nav {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+
+  header nav a {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    padding-bottom: 4px;
+  }
+
+  header nav a::before,
+  header nav a::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    background-color: #fff;
+    transition: 0.3s ease;
+  }
+
+  header nav a::before {
+    left: 0;
+  }
+
+  header nav a::after {
+    right: 0;
+  }
+
+  header nav a:hover::before,
+  header nav a:hover::after {
+    width: 50%;
+  }
+
+  /* Optional Dropdown Styling */
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000;
+    top: 100%;
+    left: 0;
+    min-width: 140px;
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
+    z-index: 99;
+    padding: 10px 0;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content a {
+    display: block;
+    padding: 8px 16px;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #333;
+  }
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    font-size: 14px;
+  }
+
+  .footer-link {
+    margin-bottom: 10px;
+  }
+
+  .footer-link a {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    padding-bottom: 4px;
+    display: inline-block;
+  }
+
+  .footer-link a::before,
+  .footer-link a::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    background-color: #fff;
+    transition: 0.3s ease;
+  }
+
+  .footer-link a::before {
+    left: 0;
+  }
+
+  .footer-link a::after {
+    right: 0;
+  }
+
+  .footer-link a:hover::before,
+  .footer-link a:hover::after {
+    width: 50%;
+  }
+
+  </style>
+
+<header>
+  <div class="logo">
+    <a href="new.html">
+      <img src="ChatGPT Image Jun 27, 2025, 09_56_59 PM.png" alt="MINA Logo">
+    </a>
+  </div>
+  <nav>
+    <div class="dropdown">
+      <a>Shop ▾</a>
+      <div class="dropdown-content">
+        <a href="men.html">Men</a>
+        <a href="women.html">Women</a>
+        <a href="unisex.html">Unisex</a>
+        <a href="cart.html">All Perfumes</a>
+      </div>
+    </div>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+     <h1 style=" text-align: center; color: #333; font-size: 45px; font-weight: 900; padding: 30px 0px;">Contact <span style="color: #000;">Us</span></h1>
+
+  <div class="contact-container">
+    <div class="contact-left">
+      <form class="contact-form" id="contact-form">
+        <div class="form-group">
+          <label style="color: #fff; text-transform: uppercase;">First name *</label>
+          <input type="text" name="first_name" required>
+        </div>
+        <div class="form-group">
+          <label style="color: #fff; text-transform: uppercase;">Last name *</label>
+          <input type="text" name="last_name" required>
+        </div>
+        <div class="form-group">
+          <label style="color: #fff; text-transform: uppercase;">Email *</label>
+          <input type="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label style="color: #fff; text-transform: uppercase;">Phone *</label>
+          <input type="text" name="phone" required>
+        </div>
+      
+        <div class="form-group full-width">
+          <label style="color: #fff; text-transform: uppercase;">Message *</label>
+          <textarea name="message" rows="4" required></textarea>
+        </div>
+<button class="submit-btn animated-btn" onclick="window.location.href='404.html'">Submit</button>
+      </form>
+    </div>
+    <div class="contact-right">
+      <img src="dark-grey-background-black-perfume-bottle_961875-60668.avif" alt="Contact Image" />
+    </div>
+  </div>
+<!-- Footer Start -->
+<footer style="background-color: #000; color: #fff; padding: 60px 20px; font-family: 'Inter', sans-serif;">
+  <div style="max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
+
+    <!-- About / Description -->
+    <div>
+      <h3 style="margin-bottom: 15px; border-bottom: 2px solid #333; display: inline-block;">Perfume Empire</h3>
+      <p style="font-size: 14px; line-height: 1.6;">
+        A luxurious destination for elegant, unforgettable fragrances that define your personality and style.
+      </p>
+      <div style="margin-top: 15px; display: flex; gap: 12px;justify-content: center;">
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" width="24" alt="Instagram"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" width="24" alt="Facebook"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" width="24" alt="Twitter"></a>
+      </div>
+    </div>
+
+    <!-- Operating Hours -->
+    <div>
+      <h3 style="margin-bottom: 15px; border-bottom: 2px solid #333; display: inline-block;">Operating Hours</h3>
+      <ul style="list-style: none; padding: 0; font-size: 14px;">
+        <li style="margin-bottom: 8px;">Mon–Fri: 9:00 AM – 8:00 PM</li>
+        <li style="margin-bottom: 8px;">Saturday: 10:00 AM – 6:00 PM</li>
+        <li>Sunday: Closed</li>
+      </ul>
+    </div>
+
+    <!-- Quick Links -->
+  <div>
+  <h3 style="margin-bottom: 15px; border-bottom: 2px solid #333; display: inline-block;">Quick Links</h3>
+<ul class="footer-links">
+  <li class="footer-link"><a href="index.html">Home</a></li>
+  <li class="footer-link"><a href="about.html">About</a></li>
+  <li class="footer-link"><a href="men.html">men</a></li>
+  <li class="footer-link"><a href="women.html">women</a></li>
+  <li class="footer-link"><a href="unisex.html">unisex</a></li>
+  <li class="footer-link"><a href="contact.html">Contact</a></li>
+</ul>
+
+</div>
+
+    <!-- Contact Info -->
+    <div>
+      <h3 style="margin-bottom: 15px; border-bottom: 2px solid #333; display: inline-block;">Have a Question?</h3>
+      <ul style="list-style: none; padding: 0; font-size: 14px;">
+        <li style="margin-bottom: 10px;">
+          📍 123 Fragrance Street,<br> Mumbai, India
+        </li>
+        <li style="margin-bottom: 10px;">
+          ☎️ +91 98765 43210
+        </li>
+        <li style="margin-bottom: 15px;">
+          ✉️ support@perfumeempire.com
+        </li>
+      </ul>
+  
+    </div>
+
+  </div>
+
+  <!-- Footer Bottom -->
+  <div style="text-align: center; font-size: 13px; color: #fff; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
+    © 2025 Perfume Empire. All rights reserved.
+  </div>
+</footer>
+  </body>

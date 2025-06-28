@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Explore Our Story - MINA Perfumes</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: #fff;
+      line-height: 1.6;
+    }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1); /* Bottom white glow */
+}
+
+  header .logo img {
+    height: 60px;
+    width: 60px;
+  }
+
+  header nav {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+
+  header nav a {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    padding-bottom: 4px;
+  }
+
+  header nav a::before,
+  header nav a::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    background-color: #fff;
+    transition: 0.3s ease;
+  }
+
+  header nav a::before {
+    left: 0;
+  }
+
+  header nav a::after {
+    right: 0;
+  }
+
+  header nav a:hover::before,
+  header nav a:hover::after {
+    width: 50%;
+  }
+
+  /* Optional Dropdown Styling */
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000;
+    top: 100%;
+    left: 0;
+    min-width: 140px;
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
+    z-index: 99;
+    padding: 10px 0;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content a {
+    display: block;
+    padding: 8px 16px;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #333;
+  }
+    section {
+      padding: 60px 10%;
+    }
+
+    h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    p {
+      color: #ccc;
+      font-size: 16px;
+    }
+
+    .hero {
+      background: url('30-nasha-black-code-perfume-intense-spark-passport-royal-long-original-imags6cufahhxvtd.webp') no-repeat center center/cover;
+      height: 60vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      z-index: 2;
+      position: relative;
+    }
+
+    .vision {
+      background-color: #333;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(255,255,255,0.05);
+    }
+
+    .timeline {
+      margin-top: 40px;
+      border-left: 2px solid #444;
+      padding-left: 20px;
+    }
+
+    .event {
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .event::before {
+      content: '';
+      width: 14px;
+      height: 14px;
+      background: #e74c3c;
+      border-radius: 50%;
+      position: absolute;
+      left: -29px;
+      top: 3px;
+    }
+
+    .split {
+      display: flex;
+      gap: 40px;
+      margin-top: 60px;
+      flex-wrap: wrap;
+    }
+
+    .split .text, .split img {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .split img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(255,255,255,0.08);
+    }
+
+    .cta {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .cta a {
+      /* background-color: #e74c3c; */
+      color: #fff;
+      padding: 14px 30px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 30px;
+      border: 1px solid #fff;
+    }
+
+    @media(max-width: 768px) {
+      .hero h1 { font-size: 32px; }
+      .split { flex-direction: column; }
+    }
+    .animated-btn {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 50px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.animated-btn::before,
+.animated-btn::after {
+  content: '';
+  position: absolute;
+  transition: all 0.4s ease;
+  z-index: -1;
+  border-radius: 50px;
+}
+
+.animated-btn::before {
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: white;
+}
+
+.animated-btn::after {
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 0%;
+  background: #444;
+}
+
+.animated-btn:hover::before {
+  width: 100%;
+}
+
+.animated-btn:hover::after {
+  height: 100%;
+}
+
+.animated-btn:hover {
+  color: black;
+}
+
+
+/* global-button */
+.animated-btn {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 50px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.animated-btn::before,
+.animated-btn::after {
+  content: '';
+  position: absolute;
+  transition: all 0.4s ease;
+  z-index: -1;
+  border-radius: 50px;
+}
+
+.animated-btn::before {
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: white;
+}
+
+.animated-btn::after {
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 0%;
+  background: #444;
+}
+
+.animated-btn:hover::before {
+  width: 100%;
+}
+
+.animated-btn:hover::after {
+  height: 100%;
+}
+
+.animated-btn:hover {
+  color: black;
+}
+.footer-links {
+    list-style: none;
+    padding: 0;
+    font-size: 14px;
+  }
+
+  .footer-link {
+    margin-bottom: 10px;
+  }
+
+  .footer-link a {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    padding-bottom: 4px;
+    display: inline-block;
+  }
+
+  .footer-link a::before,
+  .footer-link a::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    background-color: #fff;
+    transition: 0.3s ease;
+  }
+
+  .footer-link a::before {
+    left: 0;
+  }
+
+  .footer-link a::after {
+    right: 0;
+  }
+
+  .footer-link a:hover::before,
+  .footer-link a:hover::after {
+    width: 50%;
+  }
+
+
+@media (max-width: 480px) {
+  /* Header */
+ 
+
+  /* Hero Section */
+  .hero {
+    height: 50vh;
+    padding: 0 10px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero h1 {
+    font-size: 24px;
+    padding: 0 10px;
+  }
+
+  /* Section Spacing */
+  section {
+    padding: 40px 20px;
+  }
+
+  h2 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  p {
+    font-size: 15px;
+    text-align: justify;
+  }
+
+  /* Split Section */
+  .split {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .split .text,
+  .split img {
+    width: 100%;
+  }
+
+  .split img {
+    max-width: 100%;
+    max-height: 240px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  /* Timeline */
+  .timeline {
+    margin-top: 30px;
+    padding-left: 15px;
+  }
+
+  .event::before {
+    left: -23px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+  }
+
+  /* CTA */
+  .cta a {
+    display: inline-block;
+    font-size: 13px;
+    padding: 10px 22px;
+    border-radius: 30px;
+    border: 1px solid #fff;
+  }
+
+  /* Button Animation Adjustments */
+  .animated-btn {
+    font-size: 13px;
+    padding: 10px 22px;
+  }
+}
+
+    @media screen and (min-width: 481px) and (max-width:768px) {
+      .men-perfume-section {
+        padding: 50px 20px;
+      }
+
+      .men-perfume-section h2 {
+        font-size: 28px;
+      }
+
+      .men-perfume-card img {
+        height: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">
+    <a href="new.html">
+      <img src="ChatGPT Image Jun 27, 2025, 09_56_59 PM.png" alt="MINA Logo">
+    </a>
+  </div>
+  <nav>
+    <div class="dropdown">
+      <a>Shop ▾</a>
+      <div class="dropdown-content">
+        <a href="men.html">Men</a>
+        <a href="women.html">Women</a>
+        <a href="unisex.html">Unisex</a>
+        <a href="cart.html">All Perfumes</a>
+      </div>
+    </div>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+  <!-- Hero Banner -->
+  <section class="hero">
+    <h1>Explore Our Story</h1>
+  </section>
+
+  <!-- Vision -->
+  <section class="vision">
+    <h2>Our Vision</h2>
+    <p>At MINA Perfumes, we dream of redefining luxury through fragrance. We believe that every bottle we create carries emotion, confidence, and identity. Our vision is to help people express themselves — not with words, but with scents.</p>
+  </section>
+
+  <!-- Milestones Timeline -->
+  <section>
+    <h2>Our Milestones</h2>
+    <div class="timeline">
+      <div class="event">
+        <strong>2000</strong> – The birth of MINA Perfumes in a small workshop.
+      </div>
+      <div class="event">
+        <strong>2005</strong> – Launched our first flagship store.
+      </div>
+      <div class="event">
+        <strong>2012</strong> – Developed our signature unisex fragrance line.
+      </div>
+      <div class="event">
+        <strong>2018</strong> – Global expansion into 12 countries.
+      </div>
+      <div class="event">
+        <strong>2023</strong> – MINA ranked in top 5 online perfume brands.
+      </div>
+    </div>
+  </section>
+
+  <!-- Art of Fragrance -->
+  <section style="background-color: #333;">     
+    <h2 style="text-align: center; ">The Art of Fragrance</h2>
+    <div class="split">
+      <div class="text" style="display: flex; justify-content: center; align-items: center;">
+        <pX>Crafting perfumes is an art, and we are passionate artists. From sourcing the purest ingredients to blending them with precision, every step is taken with care. Our master perfumers blend heritage with innovation — resulting in scents that are both timeless and unique.</p>
+      </div>
+      <img src="bs_hp_desk_banner_053025.webp" alt="Fragrance Process">
+    </div>
+  </section>
+
+  <!-- Call To Action -->
+  <section class="cta">
+    <h2>Discover Our Perfumes</h2>
+    <p style="margin-bottom: 35px;">Browse our latest collections inspired by nature, love, and elegance.</p>
+    <a class="animated-btn" href="cart.html">Shop Now</a>
+  </section>
+<!-- Footer Start -->
+<footer style="background-color: #000; color: #fff; padding: 60px 20px; font-family: 'Inter', sans-serif;">
+  <div style="max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
+
+    <!-- About / Description -->
+    <div>
+      <h3 style="margin-bottom: 15px; border-bottom: 2px solid #333; display: inline-block;">Perfume Empire</h3>
+      <p style="font-size: 14px; line-height: 1.6;">
+        A luxurious destination for elegant, unforgettable fragrances that define your personality and style.
+      </p>
+      <div style="margin-top: 15px; display: flex; gap: 12px;">
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" width="24" alt="Instagram"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" width="24" alt="Facebook"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" width="24" alt="Twitter"></a>
+      </div>
+    </div>
+
+    <!-- Operating Hours -->
+    <div>
+      <h3 style="margin-bottom: 15px; border-bottom: 2px solid #333; display: inline-block;">Operating Hours</h3>
+      <ul style="list-style: none; padding: 0; font-size: 14px;">
+        <li style="margin-bottom: 8px;">Mon–Fri: 9:00 AM – 8:00 PM</li>
+        <li style="margin-bottom: 8px;">Saturday: 10:00 AM – 6:00 PM</li>
+        <li>Sunday: Closed</li>
+      </ul>
+    </div>
+
+    <!-- Quick Links -->
+  <div>
+  <h3 style="margin-bottom: 15px; border-bottom: 2px solid #333; display: inline-block;">Quick Links</h3>
+<ul class="footer-links">
+   <li class="footer-link"><a href="index.html">Home</a></li>
+  <li class="footer-link"><a href="about.html">About</a></li>
+  <li class="footer-link"><a href="men.html">men</a></li>
+  <li class="footer-link"><a href="women.html">women</a></li>
+  <li class="footer-link"><a href="unisex.html">unisex</a></li>
+  <li class="footer-link"><a href="contact.html">Contact</a></li>
+</ul>
+
+</div>
+
+    <!-- Contact Info -->
+    <div>
+      <h3 style="margin-bottom: 15px; border-bottom: 2px solid #333; display: inline-block;">Have a Question?</h3>
+      <ul style="list-style: none; padding: 0; font-size: 14px;">
+        <li style="margin-bottom: 10px;">
+          📍 123 Fragrance Street,<br> Mumbai, India
+        </li>
+        <li style="margin-bottom: 10px;">
+          ☎️ +91 98765 43210
+        </li>
+        <li style="margin-bottom: 15px;">
+          ✉️ support@perfumeempire.com
+        </li>
+      </ul>
+  
+    </div>
+
+  </div>
+
+  <!-- Footer Bottom -->
+  <div style="text-align: center; font-size: 13px; color: #fff; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
+    © 2025 Perfume Empire. All rights reserved.
+  </div>
+</footer>
+</body>
+</html>
